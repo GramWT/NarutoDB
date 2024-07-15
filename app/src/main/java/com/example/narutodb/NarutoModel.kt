@@ -1,9 +1,6 @@
 package com.example.narutodb
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
-
 
 data class NarutoModel(
 
@@ -20,7 +17,6 @@ data class NarutoModel(
 	val currentPage: Int? = null
 )
 
-@Parcelize
 data class Rank(
 
 	@field:SerializedName("ninjaRank")
@@ -28,7 +24,7 @@ data class Rank(
 
 	@field:SerializedName("ninjaRegistration")
 	val ninjaRegistration: String? = null
-) : Parcelable
+)
 
 data class CharactersItem(
 
@@ -37,6 +33,9 @@ data class CharactersItem(
 
 	@field:SerializedName("images")
 	val images: List<String?>? = null,
+
+	@field:SerializedName("voiceActors")
+	val voiceActors: VoiceActors? = null,
 
 	@field:SerializedName("name")
 	val name: String? = null,
@@ -66,7 +65,6 @@ data class CharactersItem(
 	val uniqueTraits: List<String?>? = null
 )
 
-@Parcelize
 data class Debut(
 
 	@field:SerializedName("game")
@@ -89,9 +87,8 @@ data class Debut(
 
 	@field:SerializedName("novel")
 	val novel: String? = null
-) : Parcelable
+)
 
-@Parcelize
 data class Weight(
 
 	@field:SerializedName("Part II")
@@ -99,9 +96,8 @@ data class Weight(
 
 	@field:SerializedName("Part I")
 	val partI: String? = null
-) : Parcelable
+)
 
-@Parcelize
 data class Height(
 
 	@field:SerializedName("Part II")
@@ -115,9 +111,8 @@ data class Height(
 
 	@field:SerializedName("Gaiden")
 	val gaiden: String? = null
-) : Parcelable
+)
 
-@Parcelize
 data class Family(
 
 	@field:SerializedName("husband")
@@ -152,9 +147,8 @@ data class Family(
 
 	@field:SerializedName("incarnation with the god tree")
 	val incarnationWithTheGodTree: String? = null
-) : Parcelable
+)
 
-@Parcelize
 data class Age(
 
 	@field:SerializedName("Part I")
@@ -171,9 +165,8 @@ data class Age(
 
 	@field:SerializedName("Chunin Promotion")
 	val chuninPromotion: String? = null
-) : Parcelable
+)
 
-@Parcelize
 data class NinjaRank(
 
 	@field:SerializedName("Part II")
@@ -184,10 +177,21 @@ data class NinjaRank(
 
 	@field:SerializedName("Boruto Manga")
 	val borutoManga: String? = null
-) : Parcelable
+)
 
+data class VoiceActors(
+
+	@field:SerializedName("japanese")
+	val japanese: String? = null,
+
+	@field:SerializedName("english")
+	val english: String? = null
+)
 
 data class Personal(
+
+	@field:SerializedName("affiliation")
+	val affiliation: String? = null,
 
 	@field:SerializedName("sex")
 	val sex: String? = null,
@@ -207,6 +211,9 @@ data class Personal(
 	@field:SerializedName("clan")
 	val clan: String? = null,
 
+	@field:SerializedName("team")
+	val team: String? = null,
+
 	@field:SerializedName("birthdate")
 	val birthdate: String? = null,
 
@@ -222,13 +229,15 @@ data class Personal(
 	@field:SerializedName("height")
 	val height: Height? = null,
 
+	@field:SerializedName("occupation")
+	val occupation: String? = null,
+
 	@field:SerializedName("jinchūriki")
 	val jinchRiki: List<String?>? = null,
 
 	@field:SerializedName("classification")
-	val classification: Any? = null,
+	val classification: String? = null,
 
 	@field:SerializedName("species")
 	val species: String? = null
 )
-
