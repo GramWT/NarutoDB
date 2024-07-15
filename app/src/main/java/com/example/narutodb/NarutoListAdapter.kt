@@ -1,6 +1,5 @@
 package com.example.narutodb
 
-import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,6 +37,12 @@ class NarutoListAdapter() : RecyclerView.Adapter<NarutoListAdapter.ViewHolder>()
         private val itemBinding = ItemProfileCardBinding.bind(itemView)
 
         fun bind(data: CharactersItem?) {
+
+            itemBinding.cardView.setOnClickListener {
+                val intent = CharacterDetailsActivity.createIntent(itemView.context, data?.id ?: 0)
+                itemView.context.startActivity(intent)
+            }
+
             data?.images?.getOrNull(0)?.also {
                 Glide.with(itemView.context)
                     .load(it)
@@ -50,12 +55,14 @@ class NarutoListAdapter() : RecyclerView.Adapter<NarutoListAdapter.ViewHolder>()
 
                 when (it.lowercase()) {
                     "deceased" -> {
-                        val colorStateList = ContextCompat.getColorStateList(itemView.context, R.color.orenge)
+                        val colorStateList =
+                            ContextCompat.getColorStateList(itemView.context, R.color.orenge)
                         itemBinding.statusImageView.backgroundTintList = colorStateList
                     }
 
                     "incapacitated" -> {
-                        val colorStateList = ContextCompat.getColorStateList(itemView.context, R.color.yellow)
+                        val colorStateList =
+                            ContextCompat.getColorStateList(itemView.context, R.color.yellow)
                         itemBinding.statusImageView.backgroundTintList = colorStateList
                     }
                 }

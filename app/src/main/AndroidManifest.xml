@@ -15,6 +15,10 @@
         android:theme="@style/Theme.NarutoDB"
         tools:targetApi="31">
         <activity
+            android:name=".CharacterDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
