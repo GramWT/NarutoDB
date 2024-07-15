@@ -29,10 +29,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:textSize="20dp"
-            android:singleLine="true"
             android:ellipsize="end"
+            android:singleLine="true"
             android:textColor="@color/gray"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/profileImageView"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,12 +41,22 @@
             android:id="@+id/statusTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
             android:ellipsize="end"
             android:singleLine="true"
             android:textColor="@color/gray"
             android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/statusImageView"
             app:layout_constraintEnd_toEndOf="@+id/nameTextView"
+            app:layout_constraintStart_toEndOf="@+id/statusImageView"
+            app:layout_constraintTop_toTopOf="@+id/statusImageView" />
+
+        <ImageView
+            android:id="@+id/statusImageView"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_circle"
             app:layout_constraintStart_toStartOf="@+id/nameTextView"
             app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
