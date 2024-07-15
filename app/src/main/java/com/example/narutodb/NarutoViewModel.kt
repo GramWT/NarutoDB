@@ -11,7 +11,7 @@ class NarutoViewModel() : ViewModel() {
     private val _allCharacter = MutableLiveData<NarutoModel?>()
     private val _characterDetails = MutableLiveData<CharacterDetailsModel?>()
 
-    var page = 5
+    var page = 1
 
     val allCharacter: LiveData<NarutoModel?>
         get() =
