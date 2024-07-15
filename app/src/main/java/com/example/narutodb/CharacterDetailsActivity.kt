@@ -46,6 +46,7 @@ class CharacterDetailsActivity : AppCompatActivity() {
                     .load(it)
                     .into(binding.characterImageView)
             }
+            binding.nameTextView.text = it?.name
         }
     }
 
