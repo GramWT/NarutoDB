@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.narutodb.databinding.ActivityCharacterDetailsBinding
 
 class CharacterDetailsActivity : AppCompatActivity() {
@@ -40,7 +41,11 @@ class CharacterDetailsActivity : AppCompatActivity() {
 
     private fun attachObserver() {
         viewModel.characterDetails.observe(this) {
-            Toast.makeText(this, "555", Toast.LENGTH_SHORT).show()
+            it?.images?.getOrNull(0)?.also {
+                Glide.with(this)
+                    .load(it)
+                    .into(binding.characterImageView)
+            }
         }
     }
 
