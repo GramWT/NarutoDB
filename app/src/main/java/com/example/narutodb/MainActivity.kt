@@ -5,6 +5,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.narutodb.ViewUtils.gone
+import com.example.narutodb.ViewUtils.visible
 import com.example.narutodb.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +34,26 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewModel.getCharacter()
+
+        binding.backButton.setOnClickListener {
+            viewModel.page -= 1
+            if (viewModel.page > 1){
+                binding.backButton.visible()
+            }else{
+                binding.backButton.gone()
+            }
+            viewModel.getCharacter()
+        }
+
+        binding.forwardButton.setOnClickListener {
+            viewModel.page += 1
+            if (viewModel.page == 72){
+                binding.forwardButton.gone()
+            }else{
+                binding.forwardButton.visible()
+            }
+            viewModel.getCharacter()
+        }
 
         attachObserver()
     }

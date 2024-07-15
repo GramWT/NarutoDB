@@ -4,7 +4,6 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-@Parcelize
 data class CharacterDetailsModel(
 
 	@field:SerializedName("debut")
@@ -30,6 +29,6 @@ data class CharacterDetailsModel(
 
 	@field:SerializedName("tools")
 	val tools: List<String?>? = null
-) : Parcelable
+)
 
 

@@ -4,7 +4,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-@Parcelize
+
 data class NarutoModel(
 
 	@field:SerializedName("totalCharacters")
@@ -18,7 +18,7 @@ data class NarutoModel(
 
 	@field:SerializedName("currentPage")
 	val currentPage: Int? = null
-) : Parcelable
+)
 
 @Parcelize
 data class Rank(
@@ -30,7 +30,6 @@ data class Rank(
 	val ninjaRegistration: String? = null
 ) : Parcelable
 
-@Parcelize
 data class CharactersItem(
 
 	@field:SerializedName("debut")
@@ -65,7 +64,7 @@ data class CharactersItem(
 
 	@field:SerializedName("uniqueTraits")
 	val uniqueTraits: List<String?>? = null
-) : Parcelable
+)
 
 @Parcelize
 data class Debut(
@@ -188,7 +187,6 @@ data class NinjaRank(
 ) : Parcelable
 
 
-@Parcelize
 data class Personal(
 
 	@field:SerializedName("sex")
@@ -228,8 +226,9 @@ data class Personal(
 	val jinchRiki: List<String?>? = null,
 
 	@field:SerializedName("classification")
-	val classification: String? = null,
+	val classification: Any? = null,
 
 	@field:SerializedName("species")
 	val species: String? = null
-) : Parcelable
+)
+

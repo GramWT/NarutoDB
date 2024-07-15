@@ -11,6 +11,8 @@ class NarutoViewModel() : ViewModel() {
     private val _allCharacter = MutableLiveData<NarutoModel?>()
     private val _characterDetails = MutableLiveData<CharacterDetailsModel?>()
 
+    var page = 5
+
     val allCharacter: LiveData<NarutoModel?>
         get() =
             _allCharacter
@@ -23,7 +25,7 @@ class NarutoViewModel() : ViewModel() {
 
     fun getCharacter() {
         viewModelScope.launch {
-            val resultData = repository.getCharacter()
+            val resultData = repository.getCharacter(page)
             if (resultData.isSuccessful)
                 _allCharacter.value = resultData.body()
         }

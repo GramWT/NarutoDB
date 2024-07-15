@@ -4,8 +4,8 @@ import retrofit2.Response
 
 class NarutoRepository() {
 
-    suspend fun getCharacter():Response<NarutoModel>{
-        return RetrofitInstance.api.getCharacter()
+    suspend fun getCharacter(page:Int):Response<NarutoModel>{
+        return RetrofitInstance.api.getCharacter(page)
     }
 
     suspend fun getCharacterDetails(id:Int):Response<CharacterDetailsModel>{
